@@ -1,4 +1,60 @@
-# Simple user management system
+# User Management System
+
+A RESTful user management application built with NestJS, TypeORM, and PostgreSQL. The application provides full CRUD operations for **Teams** and **Users**, where users can optionally belong to a team.
+
+## Features
+
+- **Teams CRUD** — Create, read, update, and delete teams
+- **Users CRUD** — Create, read, update, and delete users with team assignment
+- Input validation via `class-validator`
+- Consistent JSON error responses via a global exception filter
+- Response DTOs — entities are never exposed directly
+
+## Tech Stack
+
+- **Runtime:** NestJS (Node.js)
+- **Language:** TypeScript (strict mode)
+- **ORM:** TypeORM
+- **Database:** PostgreSQL
+- **Testing:** Jest
+- **Package Manager:** Yarn
+
+## Getting Started
+
+```bash
+# Start the database
+docker compose up -d
+
+# Install dependencies
+yarn install
+
+# Run in development mode
+yarn start:dev
+```
+
+## API Endpoints
+
+| Method | Endpoint       | Description       |
+| ------ | -------------- | ----------------- |
+| GET    | /teams         | List all teams    |
+| POST   | /teams         | Create a team     |
+| GET    | /teams/:id     | Get a team by ID  |
+| PATCH  | /teams/:id     | Update a team     |
+| DELETE | /teams/:id     | Delete a team     |
+| GET    | /users         | List all users    |
+| POST   | /users         | Create a user     |
+| GET    | /users/:id     | Get a user by ID  |
+| PATCH  | /users/:id     | Update a user     |
+| DELETE | /users/:id     | Delete a user     |
+
+## Testing
+
+```bash
+yarn test        # Unit tests
+yarn test:e2e    # E2E tests
+```
+
+## Project Structure
 
 ```
 src/
