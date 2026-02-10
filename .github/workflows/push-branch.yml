@@ -1,4 +1,4 @@
-name: Run App on Branch Push
+name: CI Pipeline for Branch Push
 
 on:
   push:
@@ -6,16 +6,16 @@ on:
       - main
 
 jobs:
-  run-app:
+  test-and-build:
     runs-on: ubuntu-latest
 
     services:
       postgres:
-        image: postgres:latest
+        image: postgres:16
         env:
           POSTGRES_DB: postgres
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_PASSWORD: postgres  # Test-only credential for CI
         ports:
           - 5432:5432
         options: >-
