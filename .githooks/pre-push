@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Pre-push hook to run build before pushing
+# This prevents broken builds from being pushed to the repository
+# run `source ./scripts/tools/install-hooks.sh` to install the hooks
+
+echo "🔨 Running pre-push hook..."
+echo "🔍 Checking if build passes before pushing..."
+
+# Run the build command
+yarn build
+
+# Check if the build was successful
+if [ $? -ne 0 ]; then
+    echo "❌ Build failed! Push aborted."
+    echo "💡 Please fix the build errors before pushing."
+    exit 1
+fi
+
+echo "✅ Build passed! Proceeding with push..."
+exit 0
