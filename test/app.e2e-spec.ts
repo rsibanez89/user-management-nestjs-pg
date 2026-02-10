@@ -3,13 +3,13 @@ import { INestApplication, ValidationPipe } from '@nestjs/common';
 import request from 'supertest';
 import { App } from 'supertest/types';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppController } from '../src/app.controller.js';
-import { AppService } from '../src/app.service.js';
-import { TeamsModule } from '../src/modules/teams/teams.module.js';
-import { UsersModule } from '../src/modules/users/users.module.js';
-import { Team } from '../src/modules/teams/entities/team.entity.js';
-import { User } from '../src/modules/users/entities/user.entity.js';
-import { HttpExceptionFilter } from '../src/common/filters/http-exception.filter.js';
+import { AppController } from '../src/app.controller';
+import { AppService } from '../src/app.service';
+import { TeamsModule } from '../src/modules/teams/teams.module';
+import { UsersModule } from '../src/modules/users/users.module';
+import { Team } from '../src/modules/teams/entities/team.entity';
+import { User } from '../src/modules/users/entities/user.entity';
+import { HttpExceptionFilter } from '../src/common/filters/http-exception.filter';
 
 interface TeamBody {
   id: string;

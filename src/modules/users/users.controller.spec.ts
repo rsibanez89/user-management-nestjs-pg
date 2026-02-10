@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { UsersController } from './users.controller.js';
-import { UsersService } from './users.service.js';
-import { UserResponseDto } from './dto/user-response.dto.js';
+import { UsersController } from './users.controller';
+import { UsersService } from './users.service';
+import { UserResponseDto } from './dto/user-response.dto';
 
 const mockUsersService = () => ({
   create: jest.fn(),

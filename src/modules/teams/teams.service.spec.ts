@@ -2,8 +2,8 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { NotFoundException, ConflictException } from '@nestjs/common';
-import { TeamsService } from './teams.service.js';
-import { Team } from './entities/team.entity.js';
+import { TeamsService } from './teams.service';
+import { Team } from './entities/team.entity';
 
 type MockRepository<T> = Partial<Record<keyof Repository<T>, jest.Mock>>;
 

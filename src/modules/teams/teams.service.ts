@@ -5,10 +5,10 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Team } from './entities/team.entity.js';
-import { CreateTeamDto } from './dto/create-team.dto.js';
-import { UpdateTeamDto } from './dto/update-team.dto.js';
-import { TeamResponseDto } from './dto/team-response.dto.js';
+import { Team } from './entities/team.entity';
+import { CreateTeamDto } from './dto/create-team.dto';
+import { UpdateTeamDto } from './dto/update-team.dto';
+import { TeamResponseDto } from './dto/team-response.dto';
 
 /**
  * Service handling all team-related business logic.

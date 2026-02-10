@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { TeamsController } from './teams.controller.js';
-import { TeamsService } from './teams.service.js';
-import { TeamResponseDto } from './dto/team-response.dto.js';
+import { TeamsController } from './teams.controller';
+import { TeamsService } from './teams.service';
+import { TeamResponseDto } from './dto/team-response.dto';
 
 const mockTeamsService = () => ({
   create: jest.fn(),

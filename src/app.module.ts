@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { AppController } from './app.controller.js';
-import { AppService } from './app.service.js';
-import { TeamsModule } from './modules/teams/teams.module.js';
-import { UsersModule } from './modules/users/users.module.js';
-import typeormConfig from './config/typeorm.config.js';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { TeamsModule } from './modules/teams/teams.module';
+import { UsersModule } from './modules/users/users.module';
+import typeormConfig from './config/typeorm.config';
 
 @Module({
   imports: [

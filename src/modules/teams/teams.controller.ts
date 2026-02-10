@@ -10,10 +10,10 @@ import {
   HttpCode,
   HttpStatus,
 } from '@nestjs/common';
-import { TeamsService } from './teams.service.js';
-import { CreateTeamDto } from './dto/create-team.dto.js';
-import { UpdateTeamDto } from './dto/update-team.dto.js';
-import { TeamResponseDto } from './dto/team-response.dto.js';
+import { TeamsService } from './teams.service';
+import { CreateTeamDto } from './dto/create-team.dto';
+import { UpdateTeamDto } from './dto/update-team.dto';
+import { TeamResponseDto } from './dto/team-response.dto';
 
 /**
  * Controller for team CRUD operations.

@@ -6,7 +6,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Team } from '../../teams/entities/team.entity.js';
+import { Team } from '../../teams/entities/team.entity';
 
 /**
  * User entity representing a system user.
