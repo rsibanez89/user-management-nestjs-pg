@@ -1,1 +1,2 @@
+2. [2026-02-10] [Claude Opus 4.6] Replace inline MockRepository type and createMockRepository factory in service specs with the shared MockType and repositoryMockFactory from test-utils.ts.
 1. [2026-02-10] [Claude Opus 4.6] Following the good practices for NestJs, please create a user management application. Ensure the app follows the folder structure defined in the README. The app should allow for CRUD operations on Teams and Users. Please modify the readme with the purpose of the app, create a plan and execute it. Ensure unit tests and integration tests pass once finished.

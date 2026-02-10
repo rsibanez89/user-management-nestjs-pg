@@ -4,20 +4,11 @@ import { Repository } from 'typeorm';
 import { NotFoundException, ConflictException } from '@nestjs/common';
 import { TeamsService } from './teams.service';
 import { Team } from './entities/team.entity';
-
-type MockRepository<T> = Partial<Record<keyof Repository<T>, jest.Mock>>;
-
-const createMockRepository = <T>(): MockRepository<T> => ({
-  find: jest.fn(),
-  findOne: jest.fn(),
-  create: jest.fn(),
-  save: jest.fn(),
-  remove: jest.fn(),
-});
+import { MockType, repositoryMockFactory } from '../../common/test/test-utils';
 
 describe('TeamsService', () => {
   let service: TeamsService;
-  let repository: MockRepository<Team>;
+  let repository: MockType<Repository<Team>>;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -25,17 +16,20 @@ describe('TeamsService', () => {
         TeamsService,
         {
           provide: getRepositoryToken(Team),
-          useValue: createMockRepository<Team>(),
+          useFactory: repositoryMockFactory,
         },
       ],
     }).compile();
 
     service = module.get<TeamsService>(TeamsService);
-    repository = module.get(getRepositoryToken(Team));
+    repository = module.get<MockType<Repository<Team>>>(
+      getRepositoryToken(Team),
+    );
   });
 
   it('should be defined', () => {
     expect(service).toBeDefined();
+    expect(repository).toBeDefined();
   });
 
   describe('create', () => {

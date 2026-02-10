@@ -124,7 +124,8 @@
 3. Add or update entity if persistence changes.
 4. Write unit tests for new or changed logic.
 5. Write or update E2E tests for HTTP flows.
-6. Run `yarn build` — must succeed with no errors.
-7. Run `yarn test` — all unit tests must pass.
-8. Run `yarn test:e2e` — all E2E tests must pass.
-9. Commit with a semantic message and push.
+6. Run `yarn lint` — must pass with no warnings.
+7. Run `yarn build` — must succeed with no errors.
+8. Run `yarn test` — all unit tests must pass.
+9. Run `yarn test:e2e` — all E2E tests must pass.
+10. Commit with a semantic message and push.
