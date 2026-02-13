@@ -10,6 +10,7 @@ import { UsersModule } from '../src/modules/users/users.module';
 import { Team } from '../src/modules/teams/entities/team.entity';
 import { User } from '../src/modules/users/entities/user.entity';
 import { HttpExceptionFilter } from '../src/common/filters/http-exception.filter';
+import { JwtAuthGuard } from '../src/common/guards/jwt-auth.guard';
 
 interface TeamBody {
   id: string;
@@ -42,7 +43,10 @@ describe('App (e2e)', () => {
       ],
       controllers: [AppController],
       providers: [AppService],
-    }).compile();
+    })
+      .overrideGuard(JwtAuthGuard)
+      .useValue({ canActivate: () => true })
+      .compile();
 
     app = moduleFixture.createNestApplication();
     app.useGlobalPipes(
