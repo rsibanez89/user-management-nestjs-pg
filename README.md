@@ -87,3 +87,17 @@ src/
 │       ├── users.module.ts
 │       └── users.service.ts
 ```
+
+Get an auth0 token for testing:
+
+```bash
+curl --request POST \
+  --url https://user-management-nesjs-pg.au.auth0.com/oauth/token \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "client_id": "qoXgDoi8lrN1eOkddL0OzPpaOOzmM3Ay",
+    "client_secret": "<YOUR_CLIENT_SECRET>",
+    "audience": "https://api.user-management-nesjs-pg",
+    "grant_type": "client_credentials"
+  }'
+```
